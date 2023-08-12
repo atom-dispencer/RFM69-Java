@@ -4,7 +4,8 @@
 package uk.iatom.rfm69;
 
 public class RFM69 {
-    public boolean someLibraryMethod() {
-        return true;
+    
+    public void writeRegister() {
+        
     }
 }
