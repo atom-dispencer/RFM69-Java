@@ -1,6 +1,6 @@
 package uk.iatom.rfm69;
 
-public class Register {
+public class Register<T extends IRegisterValue> {
     private IPeripheral chip;
     private byte address;
 
@@ -17,14 +17,14 @@ public class Register {
         return address;
     }
 
-    public void write(byte value) {
+    public void write(T value) {
         chip.transact((transaction) -> {
             transaction.write(Commands.writeAddr(address));
-            transaction.write(value);
+            transaction.write(value.getValue());
         });
     }
 
-    public byte read() {
+    public T read() {
         byte[] out = new byte[1];
         chip.transact((transaction) -> {
             transaction.write(Commands.readAddr(address));

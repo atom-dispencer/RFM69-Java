@@ -3,9 +3,10 @@
  */
 package uk.iatom.rfm69;
 
+import java.util.Map;
+
 public class RFM69 {
-    
-    public void writeRegister() {
-        
-    }
+
+    private IPeripheral chip;
+    private Map<Byte, Register> registers;
 }
