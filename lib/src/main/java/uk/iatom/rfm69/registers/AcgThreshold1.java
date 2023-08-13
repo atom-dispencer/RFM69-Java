@@ -1,4 +1,4 @@
-package uk.iatom.rfm69.magicbytes;
+package uk.iatom.rfm69.registers;
 
 public enum AcgThreshold1 {
     // RegAgcThresh1 - not present on RFM69/SX1231

@@ -1,4 +1,4 @@
-package uk.iatom.rfm69.magicbytes;
+package uk.iatom.rfm69.registers;
 
 public enum RxTimeout1 {
     
