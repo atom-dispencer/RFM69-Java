@@ -5,6 +5,8 @@ package uk.iatom.rfm69;
 
 import java.util.Map;
 
+import uk.iatom.rfm69.registers.Register;
+
 public class RFM69 {
 
     private IPeripheral chip;
