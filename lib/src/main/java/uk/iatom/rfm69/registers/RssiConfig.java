@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum RssiConfig {
+public enum RssiConfig implements IRegisterValue {
         // RegRssiConfig),
         FASTRX_ON(0x08), // not present on RFM69/SX1231),
         FASTRX_OFF(0x00), // Default),
@@ -14,7 +14,7 @@ public enum RssiConfig {
             this.val = (byte) val;
         }
     
-        public byte getVal() {
+        @Override public byte val() {
             return val;
         }
 }

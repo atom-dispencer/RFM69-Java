@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum PayloadLength {
+public enum PayloadLength implements IRegisterValue {
     
     // RegPayloadLength),
     PAYLOADLENGTH_VALUE(0x40); // Default),;
@@ -11,7 +11,7 @@ public enum PayloadLength {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Listen1 {
+public enum Listen1 implements IRegisterValue {
     // RegListen1
     RESOL_64(0x50),
     RESOL_4100(0xA0), // Default
@@ -23,7 +23,7 @@ public enum Listen1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

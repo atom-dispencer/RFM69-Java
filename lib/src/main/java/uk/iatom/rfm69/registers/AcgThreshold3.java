@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AcgThreshold3 {
+public enum AcgThreshold3 implements IRegisterValue {
     // RegAgcThresh3 - not present on RFM69/SX1231
     STEP4_0(0x00),
     STEP4_1(0x10),
@@ -41,7 +41,7 @@ public enum AcgThreshold3 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

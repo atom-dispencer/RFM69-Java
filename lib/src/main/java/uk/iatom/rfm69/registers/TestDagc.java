@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum TestDagc {
+public enum TestDagc implements IRegisterValue {
         // RegTestDagc),
         NORMAL(0x00), // Reset value),
         IMPROVED_LOWBETA1(0x20),
@@ -12,7 +12,7 @@ public enum TestDagc {
             this.val = (byte) val;
         }
     
-        public byte getVal() {
+        @Override public byte val() {
             return val;
         }
 }

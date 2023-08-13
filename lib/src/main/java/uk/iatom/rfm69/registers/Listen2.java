@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Listen2 {
+public enum Listen2 implements IRegisterValue {
     
     // RegListen2),
     COEFIDLE_VALUE(0xF5); // Default
@@ -11,7 +11,7 @@ public enum Listen2 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

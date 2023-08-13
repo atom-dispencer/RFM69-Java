@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AcgThreshold1 {
+public enum AcgThreshold1 implements IRegisterValue {
     // RegAgcThresh1 - not present on RFM69/SX1231
     SNRMARGIN_000(0x00),
     SNRMARGIN_001(0x20),
@@ -49,7 +49,7 @@ public enum AcgThreshold1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

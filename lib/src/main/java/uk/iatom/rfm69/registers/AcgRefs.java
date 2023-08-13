@@ -1,6 +1,8 @@
 package uk.iatom.rfm69.registers;
 
-public enum AcgRefs {
+import uk.iatom.rfm69.IRegisterValue;
+
+public enum AcgRefs implements IRegisterValue {
     
     // RegAgcRef - not present on RFM69/SX1231
     AUTO_ON(0x40), // Default
@@ -78,7 +80,8 @@ public enum AcgRefs {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override
+    public byte val() {
         return val;
     }
 }

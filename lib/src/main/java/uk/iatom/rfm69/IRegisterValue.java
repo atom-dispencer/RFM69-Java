@@ -1,5 +1,5 @@
 package uk.iatom.rfm69;
 
 public interface IRegisterValue {
-    byte getValue();
+    byte val();
 }

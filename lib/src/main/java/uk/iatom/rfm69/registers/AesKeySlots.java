@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AesKeySlots {
+public enum AesKeySlots implements IRegisterValue {
     // RegAesKey1-16
     RF_AESKEY1_VALUE(0x00), // Default
     RF_AESKEY2_VALUE(0x00), // Default
@@ -25,7 +25,7 @@ public enum AesKeySlots {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

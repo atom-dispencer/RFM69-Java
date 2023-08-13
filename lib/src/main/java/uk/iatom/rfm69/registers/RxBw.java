@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum RxBw {
+public enum RxBw implements IRegisterValue {
     
     // RegRxBw),
     DCCFREQ_000(0x00),
@@ -30,7 +30,7 @@ public enum RxBw {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum BroadcastAddress {
+public enum BroadcastAddress implements IRegisterValue {
 
     // RegBroadcastAdrs),
     VALUE(0x00);
@@ -11,7 +11,7 @@ public enum BroadcastAddress {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

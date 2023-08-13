@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AutoModes {
+public enum AutoModes implements IRegisterValue {
     // RegAutoModes),
     ENTER_OFF(0x00), // Default),
     ENTER_FIFONOTEMPTY(0x20),
@@ -29,7 +29,7 @@ public enum AutoModes {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

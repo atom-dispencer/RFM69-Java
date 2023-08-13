@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum FifoThresh {
+public enum FifoThresh implements IRegisterValue {
         // RegFifoThresh),
         TXSTART_FIFOTHRESH(0x00), // Reset value),
         TXSTART_FIFONOTEMPTY(0x80), // Recommended default),
@@ -13,7 +13,7 @@ public enum FifoThresh {
             this.val = (byte) val;
         }
     
-        public byte getVal() {
+        @Override public byte val() {
             return val;
         }
 }

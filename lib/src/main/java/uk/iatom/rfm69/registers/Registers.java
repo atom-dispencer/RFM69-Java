@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Registers {
+public enum Registers implements IRegisterValue {
     FIFO(0x00),
     OPMODE(0x01),
     DATAMODUL(0x02),

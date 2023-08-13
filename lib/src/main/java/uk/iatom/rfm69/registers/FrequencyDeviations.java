@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum FrequencyDeviations {
+public enum FrequencyDeviations implements IRegisterValue {
     // RegFdev - frequency deviation (Hz)
     RF_FDEVMSB_2000(0x00),
     RF_FDEVLSB_2000(0x21),
@@ -93,7 +93,7 @@ public enum FrequencyDeviations {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

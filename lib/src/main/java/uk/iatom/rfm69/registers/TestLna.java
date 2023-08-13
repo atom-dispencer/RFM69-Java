@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum TestLna {
+public enum TestLna implements IRegisterValue {
        // RegTestLna),
        NORMAL(0x1B),
        HIGH_SENSITIVITY(0x2D);
@@ -11,7 +11,7 @@ public enum TestLna {
            this.val = (byte) val;
        }
    
-       public byte getVal() {
+       @Override public byte val() {
            return val;
        }
 }

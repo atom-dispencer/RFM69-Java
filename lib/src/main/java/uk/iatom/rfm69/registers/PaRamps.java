@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum PaRamps {
+public enum PaRamps implements IRegisterValue {
     // RegPaRamp
     PA_3400(0x00),
     PA_2000(0x01),
@@ -25,7 +25,7 @@ public enum PaRamps {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

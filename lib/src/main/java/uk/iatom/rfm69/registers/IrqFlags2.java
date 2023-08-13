@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum IrqFlags2 {
+public enum IrqFlags2 implements IRegisterValue {
     
     // RegIrqFlags2),
     FIFOFULL(0x80),
@@ -18,7 +18,7 @@ public enum IrqFlags2 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

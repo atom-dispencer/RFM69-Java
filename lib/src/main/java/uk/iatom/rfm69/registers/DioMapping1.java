@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum DioMapping1 {
+public enum DioMapping1 implements IRegisterValue {
     
     // RegDioMapping1),
     DIO0_00(0x00), // Default),
@@ -26,7 +26,7 @@ public enum DioMapping1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Osc1 {
+public enum Osc1 implements IRegisterValue {
     
     // RegOsc1),
     RCCAL_START(0x80),
@@ -12,7 +12,7 @@ public enum Osc1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

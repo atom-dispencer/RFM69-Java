@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum DataModulations {
+public enum DataModulations implements IRegisterValue {
     
     // RegDataModul),
     RF_DATAMODUL_DATAMODE_PACKET(0x00), // Default),
@@ -19,7 +19,7 @@ public enum DataModulations {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

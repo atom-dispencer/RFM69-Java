@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum LowBattery {
+public enum LowBattery implements IRegisterValue {
     // RegLowBat
     RF_LOWBAT_MONITOR(0x10),
     RF_LOWBAT_ON(0x08),
@@ -21,7 +21,7 @@ public enum LowBattery {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

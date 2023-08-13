@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Lna {
+public enum Lna implements IRegisterValue {
     // RegLna),
     ZIN_50(0x00), // Reset value),
     ZIN_200(0x80), // Recommended default),
@@ -22,7 +22,7 @@ public enum Lna {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

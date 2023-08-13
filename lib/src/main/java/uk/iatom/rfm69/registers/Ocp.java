@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Ocp {
+public enum Ocp implements IRegisterValue {
     
     // RegOcp
     OFF(0x0F),
@@ -29,7 +29,7 @@ public enum Ocp {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

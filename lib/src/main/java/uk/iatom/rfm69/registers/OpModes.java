@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum OpModes {
+public enum OpModes implements IRegisterValue {
     
     // RegOpMode
     SEQUENCER_OFF(0x80),
@@ -22,7 +22,7 @@ public enum OpModes {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

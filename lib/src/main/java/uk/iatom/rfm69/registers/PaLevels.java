@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum PaLevels {
+public enum PaLevels implements IRegisterValue {
     // RegPaLevel
     PA0_ON(0x80), // Default
     PA0_OFF(0x00),
@@ -47,7 +47,7 @@ public enum PaLevels {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

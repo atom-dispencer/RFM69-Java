@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum PacketConfig1 {
+public enum PacketConfig1 implements IRegisterValue {
     // RegPacketConfig1),
     PACKET1_FORMAT_FIXED(0x00), // Default),
     PACKET1_FORMAT_VARIABLE(0x80),
@@ -21,7 +21,7 @@ public enum PacketConfig1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

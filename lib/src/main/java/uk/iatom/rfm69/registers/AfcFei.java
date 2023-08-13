@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AfcFei {
+public enum AfcFei implements IRegisterValue {
         // RegAfcFei),
         AFCFEI_FEI_DONE(0x40),
         AFCFEI_FEI_START(0x20),
@@ -20,7 +20,7 @@ public enum AfcFei {
                 this.val = (byte) val;
         }
 
-        public byte getVal() {
+        @Override public byte val() {
                 return val;
         }
 }

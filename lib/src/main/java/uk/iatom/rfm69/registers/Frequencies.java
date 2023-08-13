@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Frequencies {
+public enum Frequencies implements IRegisterValue {
     // RegFrf (MHz) - carrier frequency
     // 315Mhz band
     PAMSB_314(0x4E),
@@ -136,7 +136,7 @@ public enum Frequencies {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum BitRates {
+public enum BitRates implements IRegisterValue {
     
     // RegBitRate (bits/sec) example bit rates
     MSB_1200(0x68),
@@ -57,7 +57,7 @@ public enum BitRates {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

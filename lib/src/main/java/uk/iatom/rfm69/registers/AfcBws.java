@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AfcBws {
+public enum AfcBws implements IRegisterValue {
     
     // RegAfcBw
     PADCCFREQAFC_000(0x00),
@@ -29,7 +29,7 @@ public enum AfcBws {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

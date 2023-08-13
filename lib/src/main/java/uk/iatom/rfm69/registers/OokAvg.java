@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum OokAvg {
+public enum OokAvg implements IRegisterValue {
      // RegOokAvg),
      AVERAGETHRESHFILT_00(0x00),
      AVERAGETHRESHFILT_01(0x40),
@@ -13,7 +13,7 @@ public enum OokAvg {
          this.val = (byte) val;
      }
  
-     public byte getVal() {
+     @Override public byte val() {
          return val;
      }
 }

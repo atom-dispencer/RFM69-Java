@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum RxTimeout1 {
+public enum RxTimeout1 implements IRegisterValue {
     
 
     // RegRxTimeout1),
@@ -12,7 +12,7 @@ public enum RxTimeout1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

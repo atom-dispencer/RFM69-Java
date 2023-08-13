@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum AfcControl {
+public enum AfcControl implements IRegisterValue {
     
     // RegAfcCtrl),
     AFCCTRL_LOWBETA_OFF(0x00), // Default),
@@ -12,7 +12,7 @@ public enum AfcControl {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

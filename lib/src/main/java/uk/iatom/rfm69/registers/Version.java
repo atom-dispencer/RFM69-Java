@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Version {
+public enum Version implements IRegisterValue {
     
     // RegVersion),
     _VER(0x24); // Default),;
@@ -11,7 +11,7 @@ public enum Version {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

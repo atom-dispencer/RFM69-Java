@@ -1,7 +1,7 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
   
 
-public enum OokPeaks {
+public enum OokPeaks implements IRegisterValue {
     
     // RegOokPeak
     THRESHTYPE_FIXED(0x00),
@@ -30,7 +30,7 @@ public enum OokPeaks {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }

@@ -1,6 +1,6 @@
-package uk.iatom.rfm69.registers;
+package uk.iatom.rfm69.registers; import uk.iatom.rfm69.IRegisterValue;
 
-public enum Temp1 {
+public enum Temp1 implements IRegisterValue {
     
 
     // RegTemp1),
@@ -16,7 +16,7 @@ public enum Temp1 {
         this.val = (byte) val;
     }
 
-    public byte getVal() {
+    @Override public byte val() {
         return val;
     }
 }
