@@ -7,51 +7,54 @@ import org.junit.jupiter.api.Test;
 
 public class RegisterTest {
 
-    private MockDataBus bus;
+    private MockPeripheral chip;
     private Register register;
 
     @BeforeEach
     void beforeEach() {
-        bus = new MockDataBus((byte) 0xaf);
-        register =  new Register(bus, (byte) 0xd3);
+        MockDataBus bus = new MockDataBus((byte) 0xaf);
+        chip = new MockPeripheral(bus);
+        register =  new Register(chip, (byte) 0xd3);
     }
+
+    //TODO Need to test setting of active bit during transactions!!
 
     @Test
     void read_ReadsDefaultValue() {
         byte out = register.read();
-        assertEquals(bus.defaultReadValue, out);
+        assertEquals(chip.bus.defaultReadValue, out);
     }
 
     @Test
     void write_WritesAddress() {
         byte address = 'x';
-        register = new Register(bus, address);
+        register = new Register(chip, address);
 
         byte toWrite = 'x';
         register.write(toWrite);
-        assertEquals(Commands.writeAddr(address), bus.writtenValues.get(0), () -> "Incorrect address written.");
+        assertEquals(Commands.writeAddr(address), chip.bus.writtenValues.get(0), () -> "Incorrect address written.");
     }
 
     @Test
     void write_WritesValue() {
         byte value = 'x';
         register.write(value);
-        assertEquals(value, bus.writtenValues.get(1), () -> "Incorrect value written.");
+        assertEquals(value, chip.bus.writtenValues.get(1), () -> "Incorrect value written.");
     }
 
     @Test
     void write_Writes2Chars() {
         byte toWrite = 'x';
         register.write(toWrite);
-        assertEquals(2, bus.writtenValues.size(), () -> "Did not write exactly 2 chars.");
+        assertEquals(2, chip.bus.writtenValues.size(), () -> "Did not write exactly 2 chars.");
     }
 
     @Test
     void read_WritesAddress() {
         byte address = 'g';
-        register = new Register(bus, address);
+        register = new Register(chip, address);
 
         register.read();
-        assertEquals(Commands.readAddr(address), bus.writtenValues.get(0), () -> "Incorrect address written.");
+        assertEquals(Commands.readAddr(address), chip.bus.writtenValues.get(0), () -> "Incorrect address written.");
     }
 }

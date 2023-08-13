@@ -8,10 +8,17 @@ public class MockDataBus implements IDataBus {
 
     public byte defaultReadValue;
     public List<Byte> writtenValues;
+    public boolean active;
 
     public MockDataBus(byte defaultReadValue) {
         this.defaultReadValue = defaultReadValue;
         this.writtenValues = new ArrayList<>();
+        this.active = false;
+    }
+
+    @Override
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     @Override

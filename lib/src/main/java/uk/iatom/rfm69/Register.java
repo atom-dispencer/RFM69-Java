@@ -1,16 +1,16 @@
 package uk.iatom.rfm69;
 
 public class Register {
-    private IDataBus bus;
+    private IPeripheral chip;
     private byte address;
 
-    public Register(IDataBus spi, byte address) {
-        this.bus = spi;
+    public Register(IPeripheral chip, byte address) {
+        this.chip = chip;
         this.address = address;
     }
 
-    public IDataBus getBus() {
-        return bus;
+    public IPeripheral getChip() {
+        return chip;
     }
 
     public byte getAddress() {
@@ -18,15 +18,18 @@ public class Register {
     }
 
     public void write(byte value) {
-        bus.write(Commands.writeAddr(address));
-        bus.write(value);
+        chip.transact((transaction) -> {
+            transaction.write(Commands.writeAddr(address));
+            transaction.write(value);
+        });
     }
 
     public byte read() {
-        bus.write(Commands.readAddr(address));
-
         byte[] out = new byte[1];
-        bus.read(out);
+        chip.transact((transaction) -> {
+            transaction.write(Commands.readAddr(address));
+            transaction.read(out);
+        });
         return out[0];
     }
 }
