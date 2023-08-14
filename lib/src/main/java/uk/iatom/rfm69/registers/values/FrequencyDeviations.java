@@ -1,99 +1,120 @@
-package uk.iatom.rfm69.registers.values; import uk.iatom.rfm69.registers.IRegisterValue;
+package uk.iatom.rfm69.registers.values;
 
-public enum FrequencyDeviations implements IRegisterValue {
-    // RegFdev - frequency deviation (Hz)
-    RF_FDEVMSB_2000(0x00),
-    RF_FDEVLSB_2000(0x21),
-    RF_FDEVMSB_5000(0x00), // Default
-    RF_FDEVLSB_5000(0x52), // Default
-    RF_FDEVMSB_7500(0x00),
-    RF_FDEVLSB_7500(0x7B),
-    RF_FDEVMSB_10000(0x00),
-    RF_FDEVLSB_10000(0xA4),
-    RF_FDEVMSB_15000(0x00),
-    RF_FDEVLSB_15000(0xF6),
-    RF_FDEVMSB_20000(0x01),
-    RF_FDEVLSB_20000(0x48),
-    RF_FDEVMSB_25000(0x01),
-    RF_FDEVLSB_25000(0x9A),
-    RF_FDEVMSB_30000(0x01),
-    RF_FDEVLSB_30000(0xEC),
-    RF_FDEVMSB_35000(0x02),
-    RF_FDEVLSB_35000(0x3D),
-    RF_FDEVMSB_40000(0x02),
-    RF_FDEVLSB_40000(0x8F),
-    RF_FDEVMSB_45000(0x02),
-    RF_FDEVLSB_45000(0xE1),
-    RF_FDEVMSB_50000(0x03),
-    RF_FDEVLSB_50000(0x33),
-    RF_FDEVMSB_55000(0x03),
-    RF_FDEVLSB_55000(0x85),
-    RF_FDEVMSB_60000(0x03),
-    RF_FDEVLSB_60000(0xD7),
-    RF_FDEVMSB_65000(0x04),
-    RF_FDEVLSB_65000(0x29),
-    RF_FDEVMSB_70000(0x04),
-    RF_FDEVLSB_70000(0x7B),
-    RF_FDEVMSB_75000(0x04),
-    RF_FDEVLSB_75000(0xCD),
-    RF_FDEVMSB_80000(0x05),
-    RF_FDEVLSB_80000(0x1F),
-    RF_FDEVMSB_85000(0x05),
-    RF_FDEVLSB_85000(0x71),
-    RF_FDEVMSB_90000(0x05),
-    RF_FDEVLSB_90000(0xC3),
-    RF_FDEVMSB_95000(0x06),
-    RF_FDEVLSB_95000(0x14),
-    RF_FDEVMSB_100000(0x06),
-    RF_FDEVLSB_100000(0x66),
-    RF_FDEVMSB_110000(0x07),
-    RF_FDEVLSB_110000(0x0A),
-    RF_FDEVMSB_120000(0x07),
-    RF_FDEVLSB_120000(0xAE),
-    RF_FDEVMSB_130000(0x08),
-    RF_FDEVLSB_130000(0x52),
-    RF_FDEVMSB_140000(0x08),
-    RF_FDEVLSB_140000(0xF6),
-    RF_FDEVMSB_150000(0x09),
-    RF_FDEVLSB_150000(0x9A),
-    RF_FDEVMSB_160000(0x0A),
-    RF_FDEVLSB_160000(0x3D),
-    RF_FDEVMSB_170000(0x0A),
-    RF_FDEVLSB_170000(0xE1),
-    RF_FDEVMSB_180000(0x0B),
-    RF_FDEVLSB_180000(0x85),
-    RF_FDEVMSB_190000(0x0C),
-    RF_FDEVLSB_190000(0x29),
-    RF_FDEVMSB_200000(0x0C),
-    RF_FDEVLSB_200000(0xCD),
-    RF_FDEVMSB_210000(0x0D),
-    RF_FDEVLSB_210000(0x71),
-    RF_FDEVMSB_220000(0x0E),
-    RF_FDEVLSB_220000(0x14),
-    RF_FDEVMSB_230000(0x0E),
-    RF_FDEVLSB_230000(0xB8),
-    RF_FDEVMSB_240000(0x0F),
-    RF_FDEVLSB_240000(0x5C),
-    RF_FDEVMSB_250000(0x10),
-    RF_FDEVLSB_250000(0x00),
-    RF_FDEVMSB_260000(0x10),
-    RF_FDEVLSB_260000(0xA4),
-    RF_FDEVMSB_270000(0x11),
-    RF_FDEVLSB_270000(0x48),
-    RF_FDEVMSB_280000(0x11),
-    RF_FDEVLSB_280000(0xEC),
-    RF_FDEVMSB_290000(0x12),
-    RF_FDEVLSB_290000(0x8F),
-    RF_FDEVMSB_300000(0x13),
-    RF_FDEVLSB_300000(0x33);
+import uk.iatom.rfm69.registers.IRegisterValue;
 
-    private byte val;
-    
-    FrequencyDeviations(int val) {
-        this.val = (byte) val;
+public class FrequencyDeviations {
+
+    public static enum Msb implements IRegisterValue {
+
+        MSB_10000(0x00),
+        MSB_100000(0x06),
+        MSB_110000(0x07),
+        MSB_120000(0x07),
+        MSB_130000(0x08),
+        MSB_140000(0x08),
+        MSB_15000(0x00),
+        MSB_150000(0x09),
+        MSB_160000(0x0A),
+        MSB_170000(0x0A),
+        MSB_180000(0x0B),
+        MSB_190000(0x0C),
+        MSB_20000(0x01),
+        MSB_200000(0x0C),
+        MSB_210000(0x0D),
+        MSB_220000(0x0E),
+        MSB_230000(0x0E),
+        MSB_240000(0x0F),
+        MSB_25000(0x01),
+        MSB_250000(0x10),
+        MSB_260000(0x10),
+        MSB_270000(0x11),
+        MSB_280000(0x11),
+        MSB_290000(0x12),
+        MSB_30000(0x01),
+        MSB_300000(0x13),
+        MSB_35000(0x02),
+        MSB_40000(0x02),
+        MSB_45000(0x02),
+        MSB_5000(0x00), // Default
+        MSB_50000(0x03),
+        MSB_55000(0x03),
+        MSB_60000(0x03),
+        MSB_65000(0x04),
+        MSB_70000(0x04),
+        MSB_7500(0x00),
+        MSB_75000(0x04),
+        MSB_80000(0x05),
+        MSB_85000(0x05),
+        MSB_90000(0x05),
+        MSB_95000(0x06),
+        MSB_2000(0x00);
+
+        private byte val;
+
+        Msb(int val) {
+            this.val = (byte) val;
+        }
+
+        @Override
+        public byte val() {
+            return val;
+        }
     }
 
-    @Override public byte val() {
-        return val;
+    public static enum Lsb implements IRegisterValue {
+
+        LSB_10000(0xA4),
+        LSB_100000(0x66),
+        LSB_110000(0x0A),
+        LSB_120000(0xAE),
+        LSB_130000(0x52),
+        LSB_140000(0xF6),
+        LSB_15000(0xF6),
+        LSB_150000(0x9A),
+        LSB_160000(0x3D),
+        LSB_170000(0xE1),
+        LSB_180000(0x85),
+        LSB_190000(0x29),
+        LSB_2000(0x21),
+        LSB_20000(0x48),
+        LSB_200000(0xCD),
+        LSB_210000(0x71),
+        LSB_220000(0x14),
+        LSB_230000(0xB8),
+        LSB_240000(0x5C),
+        LSB_25000(0x9A),
+        LSB_250000(0x00),
+        LSB_260000(0xA4),
+        LSB_270000(0x48),
+        LSB_280000(0xEC),
+        LSB_290000(0x8F),
+        LSB_30000(0xEC),
+        LSB_300000(0x33),
+        LSB_35000(0x3D),
+        LSB_40000(0x8F),
+        LSB_45000(0xE1),
+        LSB_5000(0x52), // Default
+        LSB_50000(0x33),
+        LSB_55000(0x85),
+        LSB_60000(0xD7),
+        LSB_65000(0x29),
+        LSB_70000(0x7B),
+        LSB_7500(0x7B),
+        LSB_75000(0xCD),
+        LSB_80000(0x1F),
+        LSB_85000(0x71),
+        LSB_90000(0xC3),
+        LSB_95000(0x14);
+
+        private byte val;
+
+        Lsb(int val) {
+            this.val = (byte) val;
+        }
+
+        @Override
+        public byte val() {
+            return val;
+        }
     }
 }

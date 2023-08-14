@@ -5,18 +5,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import uk.iatom.rfm69.registers.Register;
+import uk.iatom.rfm69.registers.SingleRegister;
 
 public class RegisterTest {
 
     private MockPeripheral chip;
-    private Register register;
+    private SingleRegister register;
 
     @BeforeEach
     void beforeEach() {
         MockDataBus bus = new MockDataBus((byte) 0xaf);
         chip = new MockPeripheral(bus);
-        register =  new Register(chip, (byte) 0xd3);
+        register =  new SingleRegister(chip, (byte) 0xd3);
     }
 
     //TODO Need to test setting of active bit during transactions!!
@@ -30,7 +30,7 @@ public class RegisterTest {
     @Test
     void write_WritesAddress() {
         byte address = 'x';
-        register = new Register(chip, address);
+        register = new SingleRegister(chip, address);
 
         byte toWrite = 'x';
         register.write(toWrite);
@@ -54,7 +54,7 @@ public class RegisterTest {
     @Test
     void read_WritesAddress() {
         byte address = 'g';
-        register = new Register(chip, address);
+        register = new SingleRegister(chip, address);
 
         register.read();
         assertEquals(Commands.readAddr(address), chip.bus.writtenValues.get(0), () -> "Incorrect address written.");

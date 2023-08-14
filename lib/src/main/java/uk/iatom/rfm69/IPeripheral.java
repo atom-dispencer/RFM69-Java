@@ -1,5 +1,6 @@
 package uk.iatom.rfm69;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public interface IPeripheral {
@@ -10,7 +11,7 @@ public interface IPeripheral {
      * setting chip selects. For example, you might send 5 bytes and recieve 3
      * bytes.
      * 
-     * @param transaction The input transaction to complete.
+     * @param bus The bus upon which to perform the transaction.
      */
-    void transact(Consumer<IDataBus> transaction);
+    CompletableFuture<?> transact(Consumer<IDataBus> bus);
 }
