@@ -2,8 +2,8 @@ package uk.iatom.rfm69.registers.values
 
 import uk.iatom.rfm69.registers.IRegisterValue
 
-enum class RxBw(`val`: Int): IRegisterValue { // RegRxBw),
-DCCFREQ_000(0x00),
+class Rx { enum class Bw(`val`: Int): IRegisterValue { // RegRxBw),
+    DCCFREQ_000(0x00),
     DCCFREQ_001(0x20),
     DCCFREQ_010(0x40),
 
@@ -49,5 +49,38 @@ DCCFREQ_000(0x00),
 
     override fun `val`(): Byte {
         return `val`
+    }
+}
+
+    enum class Timeout1(`val`: Int): IRegisterValue { // RegRxTimeout1),
+        RXSTART_VALUE(0x00);
+
+
+        // Default),;
+        private val `val`: Byte
+
+        init {
+            this.`val` = `val`.toByte()
+        }
+
+        override fun `val`(): Byte {
+            return `val`
+        }
+    }
+
+    enum class Timeout2(`val`: Int): IRegisterValue { // RegRxTimeout2),
+        RSSITHRESH_VALUE(0x00);
+
+
+        // Default),;
+        private val `val`: Byte
+
+        init {
+            this.`val` = `val`.toByte()
+        }
+
+        override fun `val`(): Byte {
+            return `val`
+        }
     }
 }

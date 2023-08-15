@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class Lna(`val`: Int): IRegisterValue { // RegLna),
-ZIN_50(0x00),
+    ZIN_50(0x00),
 
 
     // Reset value),

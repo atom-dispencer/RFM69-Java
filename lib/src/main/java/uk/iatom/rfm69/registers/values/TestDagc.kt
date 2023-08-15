@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class TestDagc(`val`: Int): IRegisterValue { // RegTestDagc),
-NORMAL(0x00),
+    NORMAL(0x00),
 
 
     // Reset value),

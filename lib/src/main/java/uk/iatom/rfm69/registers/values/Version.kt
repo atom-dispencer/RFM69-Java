@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class Version(`val`: Int): IRegisterValue { // RegVersion),
-_VER(0x24);
+    _VER(0x24);
 
 
     // Default),;

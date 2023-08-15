@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class DataModulations(`val`: Int): IRegisterValue { // RegDataModul),
-RF_DATAMODUL_DATAMODE_PACKET(0x00),
+    RF_DATAMODUL_DATAMODE_PACKET(0x00),
 
 
     // Default),

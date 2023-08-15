@@ -1,7 +1,4 @@
-package uk.iatom.rfm69.registers.values
-
-import uk.iatom.rfm69.registers.ICodec
-import uk.iatom.rfm69.registers.IRegisterValue
+package uk.iatom.rfm69.registers
 
 class EnumCodec<V>(private val clazz: Class<V>): ICodec<V> where V: Enum<V>, V: IRegisterValue {
 

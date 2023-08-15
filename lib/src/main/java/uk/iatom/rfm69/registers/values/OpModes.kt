@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class OpModes(`val`: Int): IRegisterValue { // RegOpMode
-SEQUENCER_OFF(0x80),
+    SEQUENCER_OFF(0x80),
     SEQUENCER_ON(0x00),
 
 

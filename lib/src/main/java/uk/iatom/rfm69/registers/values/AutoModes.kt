@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class AutoModes(`val`: Int): IRegisterValue { // RegAutoModes),
-ENTER_OFF(0x00),
+    ENTER_OFF(0x00),
 
 
     // Default),

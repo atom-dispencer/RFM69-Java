@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class SyncConfig(`val`: Int): IRegisterValue { // RegSyncConfig),
-ON(0x80),
+    ON(0x80),
 
 
     // Default),

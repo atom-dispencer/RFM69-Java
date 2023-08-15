@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class Temp1(`val`: Int): IRegisterValue { // RegTemp1),
-MEAS_START(0x08),
+    MEAS_START(0x08),
     MEAS_RUNNING(0x04),
 
 

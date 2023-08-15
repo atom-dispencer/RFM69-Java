@@ -1,11 +1,10 @@
 package uk.iatom.rfm69;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import uk.iatom.rfm69.registers.SingleRegister;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RegisterTest {
 
@@ -16,7 +15,7 @@ public class RegisterTest {
     void beforeEach() {
         MockDataBus bus = new MockDataBus((byte) 0xaf);
         chip = new MockPeripheral(bus);
-        register =  new SingleRegister(chip, (byte) 0xd3);
+        register = new SingleRegister(chip, (byte) 0xd3);
     }
 
     //TODO Need to test setting of active bit during transactions!!

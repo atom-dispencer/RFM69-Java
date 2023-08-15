@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class Osc1(`val`: Int): IRegisterValue { // RegOsc1),
-RCCAL_START(0x80),
+    RCCAL_START(0x80),
     RCCAL_DONE(0x40);
 
     private val `val`: Byte

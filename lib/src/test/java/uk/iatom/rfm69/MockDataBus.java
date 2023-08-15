@@ -42,5 +42,5 @@ public class MockDataBus implements IDataBus {
         System.arraycopy(data, 0, writtenValues, 0, data.length);
         Arrays.fill(data, defaultReadValue);
     }
-    
+
 }

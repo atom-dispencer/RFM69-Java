@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class AesKeySlots(`val`: Int): IRegisterValue { // RegAesKey1-16
-RF_AESKEY1_VALUE(0x00),
+    RF_AESKEY1_VALUE(0x00),
 
 
     // Default

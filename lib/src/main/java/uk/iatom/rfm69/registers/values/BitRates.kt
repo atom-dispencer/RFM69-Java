@@ -47,7 +47,7 @@ class BitRates { enum class Msb(`val`: Int): IRegisterValue { MSB_100000(0x01),
 }
 
     enum class Lsb(`val`: Int): IRegisterValue { // custom bit rates
-    LSB_100000(0x40),
+        LSB_100000(0x40),
         LSB_115200(0x16),
         LSB_1200(0x2B),
         LSB_12500(0x00),

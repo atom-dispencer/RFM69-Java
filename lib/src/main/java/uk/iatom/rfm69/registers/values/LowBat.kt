@@ -2,8 +2,8 @@ package uk.iatom.rfm69.registers.values
 
 import uk.iatom.rfm69.registers.IRegisterValue
 
-enum class LowBattery(`val`: Int): IRegisterValue { // RegLowBat
-RF_LOWBAT_MONITOR(0x10),
+enum class LowBat(`val`: Int): IRegisterValue { // RegLowBat
+    RF_LOWBAT_MONITOR(0x10),
     RF_LOWBAT_ON(0x08),
     RF_LOWBAT_OFF(0x00),
 

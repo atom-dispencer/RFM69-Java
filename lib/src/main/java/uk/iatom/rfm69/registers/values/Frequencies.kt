@@ -3,8 +3,8 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class Frequencies(`val`: Int): IRegisterValue { // RegFrf (MHz) - carrier frequency
-// 315Mhz band
-PAMSB_314(0x4E),
+    // 315Mhz band
+    PAMSB_314(0x4E),
     PAMID_314(0x80),
     PALSB_314(0x00),
     PAMSB_315(0x4E),

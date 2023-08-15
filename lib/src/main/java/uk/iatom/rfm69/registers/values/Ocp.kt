@@ -3,7 +3,7 @@ package uk.iatom.rfm69.registers.values
 import uk.iatom.rfm69.registers.IRegisterValue
 
 enum class Ocp(`val`: Int): IRegisterValue { // RegOcp
-OFF(0x0F),
+    OFF(0x0F),
     ON(0x1A),
 
 
