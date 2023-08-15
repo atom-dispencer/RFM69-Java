@@ -2,7 +2,7 @@ package uk.iatom.rfm69;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import uk.iatom.rfm69.registers.SingleRegister;
+import uk.iatom.rfm69.register.SingleRegister;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
