@@ -1,6 +1,5 @@
 package uk.iatom.rfm69
 
-import uk.iatom.rfm69.register.ByteRegisterValue
 import uk.iatom.rfm69.register.EnumCodec
 import uk.iatom.rfm69.register.ICodec
 import uk.iatom.rfm69.register.IRegister
@@ -50,8 +49,6 @@ class RFM69(
 
         private fun <V> binding(codec: ICodec<V>, address: Byte): IRegisterBinding<V>
                 = bindingFactory.newBinding(codec, registerFactory.newRegister(address))
-
-        private fun brv(b: Byte): ByteRegisterValue = ByteRegisterValue(b)
 
 
         private val OPMODE = binding(OpModes.Codec(), 0x01)
@@ -178,7 +175,7 @@ class RFM69(
         OPMODE.writeEncoded(OpModes())
         DATAMODUL.writeEncoded(DataModulations())
         BITRATE.groupWrite(BitRates())
-        FDEVMSB.write(FrequencyDeviations.MSB_DEFAULT)
-        FDEVLSB.write(FrequencyDeviations.LSB_DEFAULT)
+        FDEV.groupWrite(FrequencyDeviations())
+        CARRIERFRF.groupWrite(CarrierFrf())
     }
 }
