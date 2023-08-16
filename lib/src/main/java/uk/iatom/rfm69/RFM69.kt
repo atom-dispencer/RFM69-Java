@@ -35,12 +35,10 @@ import uk.iatom.rfm69.register.values.TestDagc
 import uk.iatom.rfm69.register.values.TestLna
 import uk.iatom.rfm69.register.values.Version
 
-class RFM69(val factory: IRegisterFactory) {
+class RFM69(private val factory: IRegisterFactory) {
 
 
-    inner class Registers {
-        // @formatter:off
-
+    // @formatter:off
 
         private fun <V> enumRegister(clazz: Class<V>, address: Byte)
                 : ISingleRegister<V> where V: Enum<V>, V: IRegisterValue {
@@ -55,8 +53,8 @@ class RFM69(val factory: IRegisterFactory) {
         private fun brv(b: Byte): ByteRegisterValue = ByteRegisterValue(b)
 
 
-        private val OPMODE: ISingleRegister<OpModes>                     = enumRegister(OpModes::class.java, 0x01)
-        private val DATAMODUL: ISingleRegister<DataModulations>          = enumRegister(DataModulations::class.java,0x02)
+        private val OPMODE: ISingleRegister<OpModes>                     = factory.single(OpModes.Codec(), 0x01)
+        private val DATAMODUL: ISingleRegister<DataModulations>          = factory.single(DataModulations.Codec(), 0x02)
         private val BITRATEMSB: ISingleRegister<BitRates.Msb>            = enumRegister(BitRates.Msb::class.java,0x03)
         private val BITRATELSB: ISingleRegister<BitRates.Lsb>            = enumRegister(BitRates.Lsb::class.java,0x04)
         private val FDEVMSB: ISingleRegister<FrequencyDeviations.Msb>    = enumRegister(FrequencyDeviations.Msb::class.java,0x05)
@@ -144,7 +142,7 @@ class RFM69(val factory: IRegisterFactory) {
                                                                               AESKEY5, AESKEY6,
                                                                               AESKEY7, AESKEY8,
                                                                               AESKEY9, AESKEY10,
-                                                                              AESKEY11, AESKEY12,
+                                                                                      AESKEY11, AESKEY12,
                                                                               AESKEY13, AESKEY14,
                                                                               AESKEY15, AESKEY16
                                                                                           )
@@ -156,8 +154,9 @@ class RFM69(val factory: IRegisterFactory) {
         private val TESTDAGC: ISingleRegister<TestDagc>                  = enumRegister(TestDagc::class.java,0x6F)
         // @formatter:on
 
-        init {
 
-        }
+    fun initChip() {
+        OPMODE.write(OpModes())
+        DATAMODUL.write(DataModulations())
     }
 }

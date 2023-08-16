@@ -22,7 +22,7 @@ class Rssi {
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }
@@ -38,7 +38,7 @@ class Rssi {
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

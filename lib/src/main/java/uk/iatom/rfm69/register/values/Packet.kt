@@ -39,7 +39,7 @@ class Packet {
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }
@@ -78,7 +78,7 @@ class Packet {
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

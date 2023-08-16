@@ -12,7 +12,7 @@ enum class Osc1(`val`: Int): IRegisterValue { // RegOsc1),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

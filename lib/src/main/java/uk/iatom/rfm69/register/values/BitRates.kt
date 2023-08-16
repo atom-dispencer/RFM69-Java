@@ -41,7 +41,7 @@ class BitRates { enum class Msb(`val`: Int): IRegisterValue { MSB_100000(0x01),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }
@@ -86,7 +86,7 @@ class BitRates { enum class Msb(`val`: Int): IRegisterValue { MSB_100000(0x01),
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

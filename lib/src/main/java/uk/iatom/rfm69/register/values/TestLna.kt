@@ -12,7 +12,7 @@ enum class TestLna(`val`: Int): IRegisterValue { // RegTestLna),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

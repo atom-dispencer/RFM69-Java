@@ -58,7 +58,7 @@ class Pa { enum class Levels(`val`: Int): IRegisterValue { // RegPaLevel
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }
@@ -90,7 +90,7 @@ class Pa { enum class Levels(`val`: Int): IRegisterValue { // RegPaLevel
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

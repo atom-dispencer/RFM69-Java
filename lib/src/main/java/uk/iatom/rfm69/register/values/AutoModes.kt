@@ -39,7 +39,7 @@ enum class AutoModes(`val`: Int): IRegisterValue { // RegAutoModes),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

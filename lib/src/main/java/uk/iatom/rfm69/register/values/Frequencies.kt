@@ -152,7 +152,7 @@ enum class Frequencies(`val`: Int): IRegisterValue { // RegFrf (MHz) - carrier f
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

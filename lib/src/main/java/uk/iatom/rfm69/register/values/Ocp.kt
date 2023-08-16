@@ -34,7 +34,7 @@ enum class Ocp(`val`: Int): IRegisterValue { // RegOcp
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

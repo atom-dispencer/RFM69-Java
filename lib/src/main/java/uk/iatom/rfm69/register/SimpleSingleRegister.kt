@@ -37,7 +37,7 @@ class SimpleSingleRegister<T: IRegisterValue>(
                                                           ): V {
             return Arrays
                     .stream(values)
-                    .filter { v: V -> v!!.`val`() == b }
+                    .filter { v: V -> v!!.getByte() == b }
                     .findFirst()
                     .orElseThrow { NullPointerException("") }
         }

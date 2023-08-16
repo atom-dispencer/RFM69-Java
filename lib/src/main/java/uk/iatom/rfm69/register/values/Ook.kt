@@ -17,7 +17,7 @@ class Ook { enum class Avg(`val`: Int): IRegisterValue { // RegOokAvg),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }
@@ -33,7 +33,7 @@ class Ook { enum class Avg(`val`: Int): IRegisterValue { // RegOokAvg),
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }
@@ -74,7 +74,7 @@ class Ook { enum class Avg(`val`: Int): IRegisterValue { // RegOokAvg),
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

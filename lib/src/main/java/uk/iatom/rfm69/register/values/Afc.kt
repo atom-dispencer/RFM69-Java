@@ -41,7 +41,7 @@ class Afc { enum class Bws(`val`: Int): IRegisterValue { // RegAfcBw
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }
@@ -59,7 +59,7 @@ class Afc { enum class Bws(`val`: Int): IRegisterValue { // RegAfcBw
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }
@@ -87,7 +87,7 @@ class Afc { enum class Bws(`val`: Int): IRegisterValue { // RegAfcBw
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

@@ -13,7 +13,7 @@ enum class PayloadLength(`val`: Int): IRegisterValue { // RegPayloadLength),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

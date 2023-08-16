@@ -73,7 +73,7 @@ enum class AesKeySlots(`val`: Int): IRegisterValue { // RegAesKey1-16
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

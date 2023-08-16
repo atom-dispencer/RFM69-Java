@@ -27,7 +27,7 @@ enum class LowBat(`val`: Int): IRegisterValue { // RegLowBat
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

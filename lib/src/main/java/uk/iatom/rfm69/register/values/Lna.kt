@@ -34,7 +34,7 @@ enum class Lna(`val`: Int): IRegisterValue { // RegLna),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

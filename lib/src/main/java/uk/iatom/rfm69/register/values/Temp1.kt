@@ -20,7 +20,7 @@ enum class Temp1(`val`: Int): IRegisterValue { // RegTemp1),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

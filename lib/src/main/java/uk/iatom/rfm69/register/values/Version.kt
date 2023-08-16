@@ -13,7 +13,7 @@ enum class Version(`val`: Int): IRegisterValue { // RegVersion),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

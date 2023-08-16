@@ -24,7 +24,7 @@ enum class FifoThresh(`val`: Int): IRegisterValue {
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }

@@ -47,7 +47,7 @@ class Rx { enum class Bw(`val`: Int): IRegisterValue { // RegRxBw),
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }
@@ -63,7 +63,7 @@ class Rx { enum class Bw(`val`: Int): IRegisterValue { // RegRxBw),
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }
@@ -79,7 +79,7 @@ class Rx { enum class Bw(`val`: Int): IRegisterValue { // RegRxBw),
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }

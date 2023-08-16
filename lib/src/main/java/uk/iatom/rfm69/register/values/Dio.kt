@@ -38,7 +38,7 @@ class Dio { enum class Mapping1(`val`: Int): IRegisterValue { // RegDioMapping1)
         this.`val` = `val`.toByte()
     }
 
-    override fun `val`(): Byte {
+    override fun getByte(): Byte {
         return `val`
     }
 }
@@ -78,7 +78,7 @@ class Dio { enum class Mapping1(`val`: Int): IRegisterValue { // RegDioMapping1)
             this.`val` = `val`.toByte()
         }
 
-        override fun `val`(): Byte {
+        override fun getByte(): Byte {
             return `val`
         }
     }
