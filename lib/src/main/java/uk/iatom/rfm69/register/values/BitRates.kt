@@ -1,15 +1,31 @@
 package uk.iatom.rfm69.register.values
 
+import uk.iatom.rfm69.register.IRegisterGroup
 import uk.iatom.rfm69.register.IRegisterValue
 
-class BitRates {
+data class BitRates(
+        val msb: Msb = Msb.MSB_4800,
+        val lsb: Lsb = Lsb.LSB_4800
+                   ) {
 
-    companion object {
-        // C++ project says 55555
-        val MSB_DEFAULT = Msb.MSB_4800
-        val LSB_DEFAULT = Lsb.LSB_4800
+
+    class GroupCodec: IRegisterGroup.IGroupCodec<BitRates> {
+
+
+        override fun unpack(e: BitRates): List<*> {
+            return listOf(
+                    e.msb,
+                    e.lsb
+                         )
+        }
+
+        override fun pack(r: List<*>): BitRates {
+            return BitRates(
+                    r[0] as Msb,
+                    r[1] as Lsb
+                           )
+        }
     }
-
 
     enum class Msb(val v: Int): IRegisterValue { MSB_100000(0x01),
         MSB_115200(0x01),
@@ -43,7 +59,6 @@ class BitRates {
         MSB_57600(0x02),
         MSB_76800(0x01),
         MSB_9600(0x0D);
-
 
 
         override fun getByte(): Byte {

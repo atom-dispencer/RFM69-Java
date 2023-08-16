@@ -2,19 +2,14 @@ package uk.iatom.rfm69.register
 
 import uk.iatom.rfm69.IPeripheral
 
-class SimpleRegisterFactory(override val peripheral: IPeripheral): IRegisterFactory {
+class SimpleRegisterFactory(override val peripheral: IPeripheral): IRegister.Factory {
 
 
-    override val registers = mutableListOf<ISingleRegister<*>>()
-
-    override fun <V: IRegisterValue> single(
-            codec: ICodec<V>,
-            address: Byte
-                                           ): ISingleRegister<V> {
-        return SimpleSingleRegister(
-                codec,
+    override val registers = mutableListOf<IRegister>()
+    override fun newRegister(address: Byte): IRegister {
+        return SimpleRegister(
                 peripheral,
                 address
-                                   ).also { registers.add(it) }
+                             ).also { registers.add(it) }
     }
 }

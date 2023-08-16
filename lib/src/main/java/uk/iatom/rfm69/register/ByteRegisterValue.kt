@@ -4,12 +4,12 @@ class ByteRegisterValue(val byte: Byte): IRegisterValue {
 
 
     override fun getByte(): Byte = byte
-}
 
-class ByteCodec: ICodec<ByteRegisterValue> {
+    class Codec: ICodec<ByteRegisterValue> {
 
 
-    override fun encode(value: ByteRegisterValue): Byte = value.getByte()
+        override fun encode(value: ByteRegisterValue): Byte = value.getByte()
 
-    override fun decode(byte: Byte): ByteRegisterValue = ByteRegisterValue(byte)
+        override fun decode(byte: Byte): ByteRegisterValue = ByteRegisterValue(byte)
+    }
 }

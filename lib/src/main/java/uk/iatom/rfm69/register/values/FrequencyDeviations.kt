@@ -1,14 +1,32 @@
 package uk.iatom.rfm69.register.values
 
+import uk.iatom.rfm69.register.IRegisterGroup
 import uk.iatom.rfm69.register.IRegisterValue
 
-class FrequencyDeviations {
-
-    companion object {
+data class FrequencyDeviations(
         // (FDEV + BitRate / 2 <= 500KHz)
         // C++ project says 50k
-        val MSB_DEFAULT = Msb.MSB_5000
-        val LSB_DEFAULT = Lsb.LSB_5000
+        val msb: Msb = Msb.MSB_5000,
+        val lsb: Lsb = Lsb.LSB_5000
+                              ) {
+
+
+    class GroupCodec: IRegisterGroup.IGroupCodec<FrequencyDeviations> {
+
+
+        override fun unpack(e: FrequencyDeviations): List<*> {
+            return listOf(
+                    e.msb,
+                    e.lsb
+                         )
+        }
+
+        override fun pack(r: List<*>): FrequencyDeviations {
+            return FrequencyDeviations(
+                    r[0] as Msb,
+                    r[1] as Lsb
+                                      )
+        }
     }
 
 

@@ -1,6 +1,6 @@
 package uk.iatom.rfm69.register
 
-interface ICodec<V: IRegisterValue> {
+interface ICodec<V> {
 
 
     fun encode(value: V): Byte
