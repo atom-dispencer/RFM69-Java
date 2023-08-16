@@ -6,10 +6,14 @@ interface IRegisterFactory {
 
 
     val peripheral: IPeripheral
-    val registers: List<IRegister<*>>
+    val registers: List<ISingleRegister<*>>
 
-    fun <V: IRegisterValue> create(
+    fun <V: IRegisterValue> single(
             codec: ICodec<V>,
             address: Byte
-                                  ): IRegister<V>
+                                  ): ISingleRegister<V>
+
+    fun <V: IRegisterValue> compound(
+            vararg registers: ISingleRegister<V>
+                                    ): ICompoundRegister<V>
 }

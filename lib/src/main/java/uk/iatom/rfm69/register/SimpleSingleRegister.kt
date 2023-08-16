@@ -5,11 +5,11 @@ import uk.iatom.rfm69.IDataBus
 import uk.iatom.rfm69.IPeripheral
 import java.util.*
 
-class SingleRegister<T: IRegisterValue>(
+class SimpleSingleRegister<T: IRegisterValue>(
         private val codec: ICodec<T>,
         val chip: IPeripheral?,
         val address: Byte
-                                       ): IRegister<T> {
+                                             ): ISingleRegister<T> {
 
 
     override fun write(value: T) {

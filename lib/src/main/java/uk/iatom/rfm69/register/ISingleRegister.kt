@@ -1,6 +1,6 @@
 package uk.iatom.rfm69.register
 
-interface IRegister<V: IRegisterValue> {
+interface ISingleRegister<V: IRegisterValue> {
 
 
     fun write(value: V)
