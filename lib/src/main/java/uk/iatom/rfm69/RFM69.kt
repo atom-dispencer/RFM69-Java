@@ -142,7 +142,7 @@ class RFM69(private val factory: IRegisterFactory) {
                                                                               AESKEY5, AESKEY6,
                                                                               AESKEY7, AESKEY8,
                                                                               AESKEY9, AESKEY10,
-                                                                                      AESKEY11, AESKEY12,
+                                                                              AESKEY11, AESKEY12,
                                                                               AESKEY13, AESKEY14,
                                                                               AESKEY15, AESKEY16
                                                                                           )
@@ -155,8 +155,14 @@ class RFM69(private val factory: IRegisterFactory) {
         // @formatter:on
 
 
-    fun initChip() {
+    fun initRegisters() {
+
+
         OPMODE.write(OpModes())
         DATAMODUL.write(DataModulations())
+        BITRATEMSB.write(BitRates.MSB_DEFAULT)
+        BITRATELSB.write(BitRates.LSB_DEFAULT)
+        FDEVMSB.write(FrequencyDeviations.MSB_DEFAULT)
+        FDEVLSB.write(FrequencyDeviations.LSB_DEFAULT)
     }
 }

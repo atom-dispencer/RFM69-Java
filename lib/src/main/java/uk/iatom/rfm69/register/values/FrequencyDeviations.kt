@@ -4,8 +4,15 @@ import uk.iatom.rfm69.register.IRegisterValue
 
 class FrequencyDeviations {
 
+    companion object {
+        // (FDEV + BitRate / 2 <= 500KHz)
+        // C++ project says 50k
+        val MSB_DEFAULT = Msb.MSB_5000
+        val LSB_DEFAULT = Lsb.LSB_5000
+    }
 
-    enum class Msb(`val`: Int): IRegisterValue { MSB_10000(0x00),
+
+    enum class Msb(val v: Int): IRegisterValue { MSB_10000(0x00),
         MSB_100000(0x06),
         MSB_110000(0x07),
         MSB_120000(0x07),
@@ -51,18 +58,12 @@ class FrequencyDeviations {
         MSB_95000(0x06),
         MSB_2000(0x00);
 
-        private val `val`: Byte
-
-        init {
-            this.`val` = `val`.toByte()
-        }
-
         override fun getByte(): Byte {
-            return `val`
+            return v.toByte()
         }
     }
 
-    enum class Lsb(`val`: Int): IRegisterValue { LSB_10000(0xA4),
+    enum class Lsb(val v: Int): IRegisterValue { LSB_10000(0xA4),
         LSB_100000(0x66),
         LSB_110000(0x0A),
         LSB_120000(0xAE),
@@ -108,14 +109,8 @@ class FrequencyDeviations {
         LSB_90000(0xC3),
         LSB_95000(0x14);
 
-        private val `val`: Byte
-
-        init {
-            this.`val` = `val`.toByte()
-        }
-
         override fun getByte(): Byte {
-            return `val`
+            return v.toByte()
         }
     }
 }
